@@ -1,38 +1,48 @@
-memes = [
+const memes = [
   {
     name: "Decision buttons",
-    imgsrc: "blob:null/9af55e6a-f66b-43db-9ae1-c53f28efb9e4",
+    imgsrc: "https://imgflip.com/s/meme/Two-Buttons.jpg",
+    price: 9.99,
   },
   {
     name: "Distracted bf",
-    imgsrc: "blob:null/5214f271-9d70-4203-8e9e-af11087752a0",
+    imgsrc: "https://i.imgflip.com/1uooh0.jpg",
+    price: 14.99,
   },
   {
     name: "Left exit 12",
-    imgsrc: "blob:null/78363976-5a29-4223-ad1e-64fed13a373a",
+    imgsrc: "https://imgflip.com/s/meme/Left-Exit-12-Off-Ramp.jpg",
+    price: 9.99,
   },
   {
     name: "Draw 25",
-    imgsrc: "blob:null/ffeaaeab-3a93-4983-926e-01b809642eb0",
+    imgsrc: "https://imgflip.com/s/meme/UNO-Draw-25-Cards.jpg",
+    price: 14.99,
   },
   {
     name: "They don't know",
     imgsrc: "https://i.imgflip.com/4pn1an.png",
+    price: 12.99,
   },
   {
     name: "Change my mind",
     imgsrc: "https://imgflip.com/s/meme/Change-My-Mind.jpg",
+    price: 19.99,
   },
   {
     name: "Nut",
     imgsrc: "https://imgflip.com/s/meme/Blank-Nut-Button.jpg",
+    price: 6.99,
   },
   {
     name: "Expanding brain",
     imgsrc: "https://imgflip.com/s/meme/Expanding-Brain.jpg",
+    price: 14.99,
   },
   {
     name: "The Scroll of Truth",
     imgsrc: "https://imgflip.com/s/meme/The-Scroll-Of-Truth.jpg",
+    price: 24.99,
   },
 ];
+export default memes;

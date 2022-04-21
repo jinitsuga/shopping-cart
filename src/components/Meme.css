@@ -1,0 +1,20 @@
+.meme-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 225px;
+  border: solid 1px;
+  border-radius: 6px;
+}
+
+.meme-img {
+  height: 250px;
+  width: 200px;
+}
+.meme-details {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  width: 80%;
+}
