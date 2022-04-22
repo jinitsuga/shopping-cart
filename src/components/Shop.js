@@ -2,6 +2,7 @@ import React from "react";
 import Meme from "./Meme";
 import memes from "./memesdata.js";
 import "./Shop.css";
+import Cart from "./Cart";
 
 // Establishing a cart State that will contain an array of objects (memes)
 // with a name and a price props
@@ -14,15 +15,14 @@ export default function Shop() {
         imgsrc={meme.imgsrc}
         name={meme.name}
         price={meme.price}
-        addToCart={addtoCart}
+        addToCart={addToCart}
       />
     );
   });
   const [cart, setCart] = React.useState([]);
 
-  function addtoCart(meme) {
+  function addToCart(meme) {
     setCart((oldCart) => {
-      console.log(cart);
       return [...oldCart, meme];
     });
   }
@@ -30,6 +30,7 @@ export default function Shop() {
   return (
     <section className="shop-section">
       <div className="memes-container">{memeslist}</div>
+      <Cart itemsList={cart} addToCart={addToCart} />
     </section>
   );
 }
