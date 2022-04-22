@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 225px;
-  border: solid 1px;
+  border: solid 2px;
   border-radius: 6px;
 }
 
@@ -17,4 +17,11 @@
   justify-content: space-between;
   padding-bottom: 10px;
   width: 80%;
+}
+.meme-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: -2px;
+  color: #ff7ba9;
 }

@@ -18,7 +18,9 @@ export default function Nav() {
         <Link to="/shop">
           <li>Browse for memes</li>
         </Link>
-        <li> Cart</li>
+        <Link to="/cart">
+          <li> Cart</li>
+        </Link>
       </ul>
     </nav>
   );
