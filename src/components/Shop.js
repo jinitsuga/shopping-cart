@@ -9,7 +9,7 @@ import "./Shop.css";
 export default function Shop(props) {
   const setCart = props.setCart;
   const cart = props.cart;
-  console.log(cart);
+
   const memeslist = memes.map((meme) => {
     return (
       <Meme
@@ -23,9 +23,17 @@ export default function Shop(props) {
   });
 
   function addToCart(meme) {
-    setCart((oldCart) => {
-      return [...oldCart, { ...meme, quantity: 1 }];
-    });
+    const isDuplicate = cart.findIndex((item) => item.name === meme.name);
+    if (isDuplicate >= 0) {
+      const myCart = cart;
+      myCart[isDuplicate].quantity = myCart[isDuplicate].quantity + 1;
+      console.log(myCart);
+      setCart(myCart);
+    } else {
+      setCart((oldCart) => {
+        return [...oldCart, { ...meme, quantity: 1 }];
+      });
+    }
   }
 
   return (
