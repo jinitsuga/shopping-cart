@@ -2,7 +2,7 @@ import React from "react";
 import "./Nav.css";
 import { Link } from "react-router-dom";
 
-export default function Nav() {
+export default function Nav(props) {
   return (
     <nav className="main-nav">
       <div className="nav-logo">
@@ -19,7 +19,7 @@ export default function Nav() {
           <li>Browse for memes</li>
         </Link>
         <Link to="/cart">
-          <li> Cart</li>
+          <li> Cart: {props.cart.length} </li>
         </Link>
       </ul>
     </nav>

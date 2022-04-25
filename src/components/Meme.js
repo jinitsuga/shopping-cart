@@ -1,5 +1,6 @@
 import React from "react";
 import "./Meme.css";
+import uniqid from "uniqid";
 
 export default function Meme(props) {
   return (
@@ -13,7 +14,11 @@ export default function Meme(props) {
         function (adds clicked item to cart) */}
         <button
           onClick={() => {
-            props.addToCart({ name: props.name, price: props.price });
+            props.addToCart({
+              name: props.name,
+              price: props.price,
+              key: uniqid(),
+            });
           }}
           className="buy-btn"
         >
