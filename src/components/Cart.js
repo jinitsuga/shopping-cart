@@ -14,6 +14,7 @@ export default function Cart(props) {
         quantity={item.quantity}
         key={item.key}
         removeFromCart={() => props.removeFromCart({ name: item.name })}
+        addToCart={() => props.addToCart({ name: item.name })}
       />
     );
   });

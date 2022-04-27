@@ -17,18 +17,24 @@ function App() {
   function addToCart(meme) {
     const index = cart.findIndex((item) => item.name === meme.name);
     if (index >= 0) {
-      const newCart = cart.slice();
-      newCart[index].quantity++;
-      setCart(newCart);
+      setCart((oldCart) => {
+        return oldCart.map((item) => {
+          if (item.name == meme.name) {
+            return { ...item, quantity: item.quantity + 1 };
+          } else {
+            return item;
+          }
+        });
+      });
     } else {
       setCart((oldCart) => {
         return [...oldCart, { ...meme, quantity: 1 }];
       });
     }
   }
+
   // Subtract -1 quantity if quantity is higher than 1. Remove item if quantity === 1
   function removeFromCart(item) {
-    console.log(cart);
     const index = cart.findIndex((cartItem) => cartItem.name === item.name);
     if (index >= 0) {
       const myCart = cart.slice();

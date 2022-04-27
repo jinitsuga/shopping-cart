@@ -8,7 +8,7 @@ export default function Meme(props) {
       <img className="meme-img" src={props.imgsrc}></img>
       <h3 className="meme-name">{props.name}</h3>
       <div className="meme-details">
-        <span>${props.price}</span>
+        <span className="meme-price">${props.price}</span>
 
         {/* Clicking the button calls arrow function that executes the passed 
         function (adds clicked item to cart) */}

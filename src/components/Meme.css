@@ -15,7 +15,9 @@
 .meme-details {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 10px;
+  font-family: "Roboto", sans-serif;
   width: 80%;
 }
 .meme-name {
@@ -24,4 +26,28 @@
   font-size: 28px;
   letter-spacing: -2px;
   color: #ff7ba9;
+}
+.buy-btn {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  background-color: #c1f4c5;
+
+  font-size: 16px;
+  border-radius: 5px;
+  height: 50px;
+  width: 100px;
+  border: 0.5px solid;
+}
+.buy-btn:hover {
+  background-color: #65c18c;
+
+  transform: scale(1.05);
+}
+.buy-btn:active {
+  background-color: #ff7ba9;
+}
+.meme-price {
+  font-size: 22px;
+  font-weight: 600;
 }

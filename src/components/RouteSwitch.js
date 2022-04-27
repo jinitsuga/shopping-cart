@@ -26,6 +26,7 @@ export default function RouteSwitch(props) {
             itemsList={props.cart}
             setCart={props.setCart}
             removeFromCart={props.removeFromCart}
+            addToCart={props.addToCart}
           />
         }
       />
