@@ -11,9 +11,24 @@ export default function RouteSwitch(props) {
       <Route path="/" element={<Home />} />
       <Route
         path="/shop"
-        element={<Shop cart={props.cart} setCart={props.setCart} />}
+        element={
+          <Shop
+            cart={props.cart}
+            setCart={props.setCart}
+            addToCart={props.addToCart}
+          />
+        }
       />
-      <Route path="/cart" element={<Cart itemsList={props.cart} />} />
+      <Route
+        path="/cart"
+        element={
+          <Cart
+            itemsList={props.cart}
+            setCart={props.setCart}
+            removeFromCart={props.removeFromCart}
+          />
+        }
+      />
     </Routes>
   );
 }

@@ -3,6 +3,9 @@ import CartItem from "./CartItem";
 import "./Cart.css";
 
 export default function Cart(props) {
+  const cart = props.itemsList;
+  const setCart = props.setCart;
+
   const cartItemsList = props.itemsList.map((item) => {
     return (
       <CartItem
@@ -10,6 +13,7 @@ export default function Cart(props) {
         price={item.price}
         quantity={item.quantity}
         key={item.key}
+        removeFromCart={() => props.removeFromCart({ name: item.name })}
       />
     );
   });

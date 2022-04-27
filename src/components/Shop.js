@@ -17,24 +17,12 @@ export default function Shop(props) {
         key={meme.key}
         name={meme.name}
         price={meme.price}
-        addToCart={addToCart}
+        addToCart={props.addToCart}
       />
     );
   });
-
-  function addToCart(meme) {
-    const isDuplicate = cart.findIndex((item) => item.name === meme.name);
-    if (isDuplicate >= 0) {
-      const myCart = cart;
-      myCart[isDuplicate].quantity = myCart[isDuplicate].quantity + 1;
-      console.log(myCart);
-      setCart(myCart);
-    } else {
-      setCart((oldCart) => {
-        return [...oldCart, { ...meme, quantity: 1 }];
-      });
-    }
-  }
+  // addToCart function first checks if there's an item with the same name in the cart, and if so
+  // it simply adds +1 to the quantity of this item. If item is not present, it adds it, with quantity: 1
 
   return (
     <section className="shop-section">

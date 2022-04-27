@@ -3,6 +3,13 @@ import "./Nav.css";
 import { Link } from "react-router-dom";
 
 export default function Nav(props) {
+  let items = 0;
+  function calcItemsNumber() {
+    for (let i = 0; i < props.cart.length; i++) {
+      items += props.cart[i].quantity;
+    }
+    return items;
+  }
   return (
     <nav className="main-nav">
       <div className="nav-logo">
@@ -19,7 +26,7 @@ export default function Nav(props) {
           <li>Browse for memes</li>
         </Link>
         <Link to="/cart">
-          <li> Cart: {props.cart.length} </li>
+          <li> Cart: {calcItemsNumber()}</li>
         </Link>
       </ul>
     </nav>

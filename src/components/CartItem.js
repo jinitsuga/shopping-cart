@@ -7,7 +7,9 @@ export default function cartItem(props) {
       <span className="item-price"> ${props.price} </span>
       <button className="add-btn">+</button>
       <span className="quantity">{props.quantity}</span>
-      <button className="sub-btn">-</button>
+      <button className="sub-btn" onClick={props.removeFromCart}>
+        -
+      </button>
     </div>
   );
 }
