@@ -22,3 +22,12 @@ footer > ul {
   color: #ffbed8;
   text-decoration: none;
 }
+.gh-link {
+  display: flex;
+  width: 15%;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: #ffbed8;
+  text-decoration: none;
+}

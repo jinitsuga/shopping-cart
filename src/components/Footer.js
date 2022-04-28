@@ -5,7 +5,11 @@ export default function Footer() {
     <footer>
       <ul className="foot-list">
         <li>by Agu Ibanez</li>
-        <li>GitHub</li>
+        <li>
+          <a className="gh-link" href="https://github.com/jinitsuga">
+            GitHub
+          </a>
+        </li>
       </ul>
     </footer>
   );
