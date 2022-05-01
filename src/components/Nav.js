@@ -26,7 +26,7 @@ export default function Nav(props) {
           <li>Browse for memes</li>
         </Link>
         <Link to="/cart">
-          <li> Cart: {calcItemsNumber()}</li>
+          <li data-testid="navCounter"> Cart: {calcItemsNumber()}</li>
         </Link>
       </ul>
     </nav>

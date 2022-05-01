@@ -4,7 +4,7 @@ nav {
   font-family: "Roboto", sans-serif;
   background-color: #65c18c;
   color: #ff7ba9;
-  height: 12vh;
+
   display: flex;
   justify-content: space-between;
 }
@@ -44,4 +44,34 @@ nav > ul > a:hover {
 nav > ul > a {
   color: #ffbed8;
   text-decoration: none;
+}
+@media (max-width: 1200px) {
+  nav {
+    font-family: "Roboto", sans-serif;
+    background-color: #65c18c;
+    color: #ff7ba9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-logo {
+    margin-left: 0.1px;
+  }
+  nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav > ul {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  nav > ul > a {
+    margin-bottom: 5px;
+  }
 }
