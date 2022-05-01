@@ -36,3 +36,14 @@ body {
   width: 60%;
   letter-spacing: -2.5px;
 }
+/*  Responsiveness */
+@media (max-width: 1415px) {
+  .main-section {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1120px) {
+  .main-img {
+    max-width: 95%;
+  }
+}

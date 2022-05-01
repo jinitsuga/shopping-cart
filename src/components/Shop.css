@@ -7,3 +7,11 @@
   margin-top: 25px;
   padding-bottom: 50px;
 }
+
+/* Responsiveness */
+
+@media (max-width: 800px) {
+  .memes-container {
+    grid-template-columns: 250px;
+  }
+}

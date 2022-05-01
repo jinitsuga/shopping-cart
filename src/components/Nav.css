@@ -45,6 +45,9 @@ nav > ul > a {
   color: #ffbed8;
   text-decoration: none;
 }
+
+/*  Media queries / Responsiveness */
+
 @media (max-width: 1200px) {
   nav {
     font-family: "Roboto", sans-serif;

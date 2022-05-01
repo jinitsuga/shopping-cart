@@ -31,3 +31,23 @@ footer > ul {
   color: #ffbed8;
   text-decoration: none;
 }
+.gh-link:hover {
+  color: #ff7ba9;
+}
+/* responsiveness */
+@media (max-width: 1124px) {
+  footer > ul {
+    width: 25%;
+  }
+}
+@media (max-width: 700px) {
+  footer {
+    width: 100vw;
+    padding-right: 20%;
+  }
+}
+@media (max-width: 800px) {
+  footer {
+    font-size: 14px;
+  }
+}
