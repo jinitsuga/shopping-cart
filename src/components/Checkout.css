@@ -1,5 +1,6 @@
 .checkout {
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -23,4 +24,20 @@
 .pay-btns > button:hover {
   background-color: #ffbed8;
   transform: scale(1.05);
+}
+.payment-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+.payment-details > input {
+  font-size: 16px;
+  height: 35px;
+  border-radius: 3px;
+  margin: 10px;
+}
+.payment-details > span {
+  font-size: 20px;
 }
