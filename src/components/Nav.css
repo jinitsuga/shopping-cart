@@ -69,7 +69,7 @@ nav > ul > a {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
   nav > ul {
     flex-direction: column;
     justify-content: space-around;

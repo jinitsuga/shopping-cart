@@ -1,5 +1,3 @@
-import { Route } from "react-router-dom";
-
 import React from "react";
 import "./App.css";
 import Nav from "./components/Nav";
@@ -13,13 +11,15 @@ function App() {
 
   // addToCart function first checks if there's an item with the same name in the cart, and if so
   // it simply adds +1 to the quantity of this item. If item is not present, it adds it, with quantity: 1
-
+  function resetCart() {
+    setCart([]);
+  }
   function addToCart(meme) {
     const index = cart.findIndex((item) => item.name === meme.name);
     if (index >= 0) {
       setCart((oldCart) => {
         return oldCart.map((item) => {
-          if (item.name == meme.name) {
+          if (item.name === meme.name) {
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -52,6 +52,7 @@ function App() {
     <div className="App">
       <Nav cart={cart} />
       <RouteSwitch
+        resetCart={resetCart}
         cart={cart}
         setCart={setCart}
         addToCart={addToCart}

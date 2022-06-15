@@ -1,6 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
 import "./Cart.css";
+import { Link } from "react-router-dom";
 
 export default function Cart(props) {
   const cart = props.itemsList;
@@ -32,6 +33,16 @@ export default function Cart(props) {
           <h3 className="cart-title">Your shopping cart:</h3>
           <div className="cart-items-container">{cartItemsList}</div>
           <span className="cart-total">Total: ${total}</span>
+          <div className="cart-btns">
+            <ul className="cart-btns-list">
+              <Link className="keep-browsing" to="/shop">
+                <li>Keep browsing</li>
+              </Link>
+              <Link to="/checkout">
+                <li className="go-checkout">Proceed to checkout</li>
+              </Link>
+            </ul>
+          </div>
         </div>
       ) : (
         <h3 className="cart-title">No items in your cart</h3>
