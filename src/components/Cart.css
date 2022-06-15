@@ -112,3 +112,12 @@
 .keep-browsing:hover {
   background-color: #65c18c;
 }
+.go-checkout {
+  color: black;
+  background-color: #ff7ba9;
+}
+.go-checkout:hover {
+  transform: scale(1.1);
+
+  background-color: #ffbed8;
+}

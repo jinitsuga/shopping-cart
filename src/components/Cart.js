@@ -38,8 +38,8 @@ export default function Cart(props) {
               <Link className="keep-browsing" to="/shop">
                 <li>Keep browsing</li>
               </Link>
-              <Link to="/checkout">
-                <li className="go-checkout">Proceed to checkout</li>
+              <Link className="go-checkout" to="/checkout">
+                <li>Checkout →</li>
               </Link>
             </ul>
           </div>

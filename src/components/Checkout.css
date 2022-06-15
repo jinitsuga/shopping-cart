@@ -1,0 +1,26 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.pay-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+.pay-btns > button {
+  font-family: "Roboto", sans-serif;
+  border: solid 0.5px;
+  font-size: 24px;
+  background-color: #c1f4c5;
+  border-radius: 5px;
+  height: 200px;
+  width: 250px;
+  margin: 5px;
+}
+.pay-btns > button:hover {
+  background-color: #ffbed8;
+  transform: scale(1.05);
+}

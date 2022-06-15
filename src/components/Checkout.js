@@ -3,6 +3,12 @@ import "./Checkout.css";
 export default function Checkout(props) {
   const [isFormShown, setIsFormShown] = React.useState(false);
   const [buyerName, setBuyerName] = React.useState("");
+  const cart = props.cart;
+  const total = Math.floor(
+    cart.reduce(function (previous, current) {
+      return previous + current.price * current.quantity;
+    }, 0)
+  );
   // need to send total price and resetCart from props
   function payTotal() {}
   function showPaymentForm() {
@@ -12,6 +18,7 @@ export default function Checkout(props) {
     setBuyerName(e.event.target.value);
     console.log(buyerName);
   }
+
   return (
     <section className="checkout">
       <div className="pay-btns">
@@ -20,14 +27,14 @@ export default function Checkout(props) {
           style={!isFormShown ? { display: "block" } : { display: "none" }}
           onClick={showPaymentForm}
         >
-          Pay ${props.total} in laughs
+          Pay $ {total} in laughs :D
         </button>
         <button
           type="button"
           style={!isFormShown ? { display: "block" } : { display: "none" }}
           onClick={showPaymentForm}
         >
-          Pay ${props.total} in smiles
+          Pay ${total} in smiles :)
         </button>
       </div>
       <form
