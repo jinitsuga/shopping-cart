@@ -2,9 +2,12 @@ import React from "react";
 import "./Checkout.css";
 export default function Checkout(props) {
   const [isFormShown, setIsFormShown] = React.useState(false);
-  const [buyerName, setBuyerName] = React.useState("");
-  const [buyerLocation, setBuyerLocation] = React.useState("");
-  const [isOrderSent, setIsOrderSent] = React.useState(false);
+
+  const [buyerInfo, setBuyerInfo] = React.useState({
+    name: "",
+    country: "",
+    location: "",
+  });
   const cart = props.cart;
   const total = Math.floor(
     cart.reduce(function (previous, current) {
@@ -12,26 +15,16 @@ export default function Checkout(props) {
     }, 0)
   );
   // need to send total price and resetCart from props
+  // FORM VALIDATION PENDING
   function keepBrowsing() {}
   function placeOrder() {
     props.resetCart();
-    console.log(
-      "Thank you " +
-        buyerName +
-        " for your purchase! Your order is heading to " +
-        buyerLocation
-    );
+    setIsOrderSent(true);
   }
   function showPaymentForm() {
     setIsFormShown(true);
   }
-  function saveBuyerLocation(e) {
-    setBuyerLocation(e.target.value);
-  }
-  function saveBuyerName(e) {
-    setBuyerName(e.target.value);
-    console.log(buyerName);
-  }
+
   function avoidSubmit(e) {
     e.preventDefault();
   }
@@ -56,9 +49,16 @@ export default function Checkout(props) {
       <form
         onSubmit={avoidSubmit}
         className="payment-info"
-        style={!isFormShown ? { display: "none" } : { display: "block" }}
+        style={!isFormShown ? { display: "none" } : { display: "flex" }}
       >
-        <div className="payment-details">
+        <div
+          className="payment-details"
+          style={
+            isOrderSent
+              ? { display: "none" }
+              : { display: "block", display: "flex", flexDirection: "column" }
+          }
+        >
           <span>Enter your name:</span>
           <input
             className="payment-name"
@@ -78,11 +78,14 @@ export default function Checkout(props) {
           >
             Place order
           </button>
-          <p
-            className="thank-text"
-            style={isOrderSent ? { display: "block" } : { display: "none" }}
-          ></p>
         </div>
+        <p
+          className="thank-text"
+          style={isOrderSent ? { display: "block" } : { display: "none" }}
+        >
+          Thank you {buyerName} for your purchase! Your order is on the way to{" "}
+          {buyerLocation}. It should be there in about 69 hours.
+        </p>
       </form>
     </section>
   );
