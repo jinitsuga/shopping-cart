@@ -1,5 +1,6 @@
 import React from "react";
 import "./Checkout.css";
+import FormInput from "./FormInput";
 export default function Checkout(props) {
   const [isFormShown, setIsFormShown] = React.useState(false);
 
@@ -8,18 +9,57 @@ export default function Checkout(props) {
     country: "",
     location: "",
   });
+  function handleInput(e) {
+    setBuyerInfo({ ...buyerInfo, [e.target.name]: e.target.value });
+    console.log(buyerInfo);
+  }
+  // array with the inputs props to map over and create the form.
+  // Easier and cleaner to validate this way.
+  const inputsData = [
+    {
+      key: 1,
+      name: "name",
+      label: "Name",
+      placeholder: "Your name",
+      type: "text",
+      required: true,
+      errorMessage: "Name should be at least 3 and up to 14 characters",
+      pattern: "^[A-Za-z0-9]{3,14}$",
+    },
+    {
+      key: 2,
+      name: "country",
+      label: "Country",
+      placeholder: "Select your country",
+      type: "text",
+      required: true,
+      errorMessage: "Choose an existing country",
+      pattern: "^[A-Za-z0-9]{3,14}$",
+    },
+    {
+      key: 3,
+      name: "location",
+      label: "Location",
+      placeholder: "Location/City",
+      type: "text",
+      required: true,
+      errorMessage: "City should be at least 2 and up to 16 characters",
+      pattern: "^[A-Za-z0-9]{2,16}$",
+    },
+  ];
+  const inputs = inputsData.map((input) => {
+    return <FormInput id={input.key} {...input} onChange={handleInput} />;
+  });
+
   const cart = props.cart;
   const total = Math.floor(
     cart.reduce(function (previous, current) {
       return previous + current.price * current.quantity;
     }, 0)
   );
-  // need to send total price and resetCart from props
-  // FORM VALIDATION PENDING
-  function keepBrowsing() {}
+
   function placeOrder() {
     props.resetCart();
-    setIsOrderSent(true);
   }
   function showPaymentForm() {
     setIsFormShown(true);
@@ -51,41 +91,7 @@ export default function Checkout(props) {
         className="payment-info"
         style={!isFormShown ? { display: "none" } : { display: "flex" }}
       >
-        <div
-          className="payment-details"
-          style={
-            isOrderSent
-              ? { display: "none" }
-              : { display: "block", display: "flex", flexDirection: "column" }
-          }
-        >
-          <span>Enter your name:</span>
-          <input
-            className="payment-name"
-            placeholder="Name"
-            onChange={saveBuyerName}
-          ></input>
-          <span>Location:</span>
-          <input
-            className="payment-location"
-            placeholder="Location/city"
-            onChange={saveBuyerLocation}
-          ></input>
-          <button
-            className="place-order-btn"
-            type="button"
-            onClick={placeOrder}
-          >
-            Place order
-          </button>
-        </div>
-        <p
-          className="thank-text"
-          style={isOrderSent ? { display: "block" } : { display: "none" }}
-        >
-          Thank you {buyerName} for your purchase! Your order is on the way to{" "}
-          {buyerLocation}. It should be there in about 69 hours.
-        </p>
+        {inputs}
       </form>
     </section>
   );
