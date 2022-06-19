@@ -1,4 +1,25 @@
 .error-msg {
+  font-size: 14px;
+  padding: 8px;
+  width: 175px;
   color: red;
   display: none;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.checkout-input {
+  width: 200px;
+  height: 30px;
+  border-radius: 3px;
+}
+label {
+  margin: 15px;
+}
+.checkout-input:invalid[focus="true"] ~ .error-msg {
+  display: block;
 }

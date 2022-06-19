@@ -91,7 +91,19 @@ export default function Checkout(props) {
         className="payment-info"
         style={!isFormShown ? { display: "none" } : { display: "flex" }}
       >
-        {inputs}
+        <div className="inputs-container">
+          {inputs}
+          <button
+            type="button"
+            className="order-btn"
+            onClick={(e) => {
+              avoidSubmit(e);
+              placeOrder();
+            }}
+          >
+            Place order
+          </button>
+        </div>
       </form>
     </section>
   );
