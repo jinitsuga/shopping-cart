@@ -6,6 +6,7 @@
   display: none;
 }
 .form-input {
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -57,3 +57,21 @@ form {
 .order-btn {
   margin: 10px;
 }
+.country-selector-container {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.country-selection {
+  width: 200px;
+}
+.thanks-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
