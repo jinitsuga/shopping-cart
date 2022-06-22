@@ -12,10 +12,10 @@ export default function Checkout(props) {
   });
   function handleInput(e) {
     setBuyerInfo({ ...buyerInfo, [e.target.name]: e.target.value });
-    //console.log(e.target.value);
   }
   // array with the inputs props to map over and create the form.
   // Easier and cleaner to validate this way.
+  // Potentially moving countryList to another file
   const countryList = [
     "Afghanistan",
     "Albania",
@@ -284,7 +284,7 @@ export default function Checkout(props) {
       required: true,
       errorMessage:
         "Name should be at least 3 and up to 16 characters. Letters and spaces only.",
-      pattern: "^[a-zA-Zs]{3,16}$",
+      pattern: "^[a-zA-Z\\s]{3,16}$",
     },
     {
       key: 2,

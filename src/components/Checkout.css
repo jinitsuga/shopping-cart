@@ -55,7 +55,15 @@ form {
   align-items: center;
 }
 .order-btn {
+  font-size: 18px;
   margin: 10px;
+  width: 100px;
+  height: 55px;
+  border-radius: 5px;
+  background-color: #c1f4c5;
+}
+.order-btn:hover {
+  background-color: #ff7ba9;
 }
 .country-selector-container {
   font-family: "Roboto", sans-serif;
