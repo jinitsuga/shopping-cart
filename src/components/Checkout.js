@@ -303,7 +303,7 @@ export default function Checkout(props) {
       type: "text",
       required: true,
       errorMessage: "City should be at least 2 and up to 16 characters",
-      pattern: "^[A-Za-z0-9s]{2,16}$",
+      pattern: "^[A-Za-z0-9\\s]{2,16}$",
     },
   ];
   const inputs = inputsData.map((input) => {
