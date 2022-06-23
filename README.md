@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+MEME STORE - A coding project for The Odin Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This was made as part of The Odin Project's (TOP) curriculum, near the beginning of the React section. It is the website of an extremely simple store, with most of its functionality focused on how the shopping cart works.
 
-## Available Scripts
+It's difficult for me to just go with another pet store, or workout equipment store, so I decided to go on the memes route, something which most of us enjoy and can have a laugh at.
 
-In the project directory, you can run:
+If you clone this repo and want to run it locally, you can do so by simply typing `npm start` in the console, while in the project's directory.
 
-### `npm start`
+`About the app`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The idea behind the app is to simply practice the functionality of a shopping cart. Adding and removing items, total price showed, and being able to add more of the same or remove a number of items from the cart itself.
+Followed by a simple checkout process as most stores have.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`Some of the challenges`
 
-### `npm test`
+Coming up with a non-disgusting design: good design is SO.HARD. Thinking about the layout and design of the site was challenging enough to just make me go with the ridiculous colors and shapes route.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+State management: thinking beforehand which components will need and be able to modify which state is a must. Things definitely got super messy at a point where I had some state saved in the Nav component, which was probably the least practical thing to do and I ended up refactoring almost all of it.
 
-### `npm run build`
+Functionality and context (or lack of): Another challenging aspect here was the passing of props from multiple components down the line. It quickly became hard to track, and could have easily led to tightly coupled mistakes. Due to this, one of the things I'm studying next will most likely be 'Context' in React, which I think (?) will help with this issue.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Form validation: Long gone are the days of validating an input field through a simple HTML property. After doing some research, I ended up creating an component and making a list of input objects separately, to then map over this list and make an Input component out of each object. This gave me a lot of agency over the things I want from each input, and it's scalable, in the sense that it didn't matter if I had 3 input fields or 45.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Patterns and regEx: During the form validation research, I came across the pattern property, and how much control of an input you can have when coupled with the proper regEx. I didn't dive too deep into regEx's (they seem like a headache), but they seemed easy enough to google and modify to my specific needs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Added uniqid - extremely light package to generate random id's for lists/mapped elements. Not necessary to run the project.
