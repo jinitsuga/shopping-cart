@@ -13,7 +13,7 @@ If you clone this repo and want to run it locally, you can do so by simply typin
 The idea behind the app is to simply practice the functionality of a shopping cart. Adding and removing items, total price showed, and being able to add more of the same or remove a number of items from the cart itself.
 Followed by a simple checkout process as most stores have.
 
-**`Some of the challenges`**
+**`Some of the challenges and lessons`**
 
 Coming up with a non-disgusting design: good design is SO.HARD. Thinking about the layout and design of the site was challenging enough to just make me go with the ridiculous colors and shapes route.
 
@@ -24,6 +24,8 @@ Functionality and context (or lack of): Another challenging aspect here was the 
 Form validation: Long gone are the days of validating an input field through a simple HTML property. After doing some research, I ended up creating an component and making a list of input objects separately, to then map over this list and make an Input component out of each object. This gave me a lot of agency over the things I want from each input, and it's scalable, in the sense that it didn't matter if I had 3 input fields or 45.
 
 Patterns and regEx: During the form validation research, I came across the pattern property, and how much control of an input you can have when coupled with the proper regEx. I didn't dive too deep into regEx's (they seem like a headache), but they seemed easy enough to google and modify to my specific needs.
+
+Checking property values and styling accordingly in CSS: through some research I also learned that it is possible to check the property of an element and style according to the value of this property in CSS. The example in this project are the error messages in the checkout form - if the input is valid, the span element containing the error message will remain hidden, but if invalid, the error shows and is colored red.
 
 ---
 
