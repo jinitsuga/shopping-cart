@@ -83,3 +83,8 @@ form {
   align-items: center;
   width: 35%;
 }
+@media (max-width: 555px) {
+  .pay-btns {
+    flex-direction: column;
+  }
+}

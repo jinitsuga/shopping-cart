@@ -10,11 +10,25 @@ export default function Checkout(props) {
     country: "",
     location: "",
   });
+
+  // State to handle input validation (Could've added to buyerInfo state)
+  const [validity, setValidity] = React.useState([
+    { name: "name", isValid: false },
+    { name: "location", isValid: false },
+  ]);
+
+  // Changes both states according to what is added in the input elements.
   function handleInput(e) {
+    setValidity((oldValidity) =>
+      oldValidity.map((input) =>
+        input.name !== e.target.name
+          ? input
+          : { ...input, isValid: e.target.checkValidity() }
+      )
+    );
     setBuyerInfo({ ...buyerInfo, [e.target.name]: e.target.value });
   }
-  // array with the inputs props to map over and create the form.
-  // Easier and cleaner to validate this way.
+
   // Potentially moving countryList to another file
   const countryList = [
     "Afghanistan",
@@ -274,6 +288,8 @@ export default function Checkout(props) {
       </option>
     );
   });
+
+  //Inputs data to map over and generate input components (mostly for ease of validation)
   const inputsData = [
     {
       key: 1,
@@ -294,6 +310,7 @@ export default function Checkout(props) {
       type: "text",
       required: true,
       errorMessage: "Choose an existing country",
+      pattern: "^[a-zA-Z\\s]{3,16}$",
     },
     {
       key: 3,
@@ -317,7 +334,9 @@ export default function Checkout(props) {
           id={input.id}
           name={input.name}
           className="country-selection"
+          required="true"
         >
+          <option disabled="disabled">Choose a country</option>
           {countries}
         </select>
       </div>
@@ -386,7 +405,7 @@ export default function Checkout(props) {
           style={areThanksShown ? { display: "block" } : { display: "none" }}
         >
           Thank you {buyerInfo.name} for your purchase! Your memes will shortly
-          be on their way to {buyerInfo.location}, {buyerInfo.country}. Your
+          be on their way to {buyerInfo.location}, {buyerInfo.country}. The
           order should arrive in about 4d20h and 69 minutes.
         </p>
       </form>
