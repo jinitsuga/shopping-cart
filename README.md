@@ -1,17 +1,19 @@
-MEME STORE - A coding project for The Odin Project
+**MEME STORE - A coding project for The Odin Project**
 
 This was made as part of The Odin Project's (TOP) curriculum, near the beginning of the React section. It is the website of an extremely simple store, with most of its functionality focused on how the shopping cart works.
 
 It's difficult for me to just go with another pet store, or workout equipment store, so I decided to go on the memes route, something which most of us enjoy and can have a laugh at.
 
-If you clone this repo and want to run it locally, you can do so by simply typing `npm start` in the console, while in the project's directory.
+`Through Create React App`
 
-`About the app`
+If you clone this repo and want to run it locally, you can do so by simply typing `npm start` in the console, while in the project's directory, since it was done using 'Create React App'.
+
+**`About the app`**
 
 The idea behind the app is to simply practice the functionality of a shopping cart. Adding and removing items, total price showed, and being able to add more of the same or remove a number of items from the cart itself.
 Followed by a simple checkout process as most stores have.
 
-`Some of the challenges`
+**`Some of the challenges`**
 
 Coming up with a non-disgusting design: good design is SO.HARD. Thinking about the layout and design of the site was challenging enough to just make me go with the ridiculous colors and shapes route.
 
