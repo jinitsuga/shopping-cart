@@ -1,6 +1,7 @@
 import React from "react";
 import "./Checkout.css";
 import FormInput from "./FormInput";
+import uniqid from "uniqid";
 export default function Checkout(props) {
   const [isFormShown, setIsFormShown] = React.useState(false);
   const [areThanksShown, setAreThanksShown] = React.useState(false);
@@ -292,7 +293,7 @@ export default function Checkout(props) {
   //Inputs data to map over and generate input components (mostly for ease of validation)
   const inputsData = [
     {
-      key: 1,
+      key: uniqid(),
       name: "name",
       label: "Name",
       placeholder: "Your name",
@@ -303,7 +304,7 @@ export default function Checkout(props) {
       pattern: "^[a-zA-Z\\s]{3,16}$",
     },
     {
-      key: 2,
+      key: uniqid(),
       name: "country",
       label: "Country",
       placeholder: "Select your country",
@@ -313,7 +314,7 @@ export default function Checkout(props) {
       pattern: "^[a-zA-Z\\s]{3,16}$",
     },
     {
-      key: 3,
+      key: uniqid(),
       name: "location",
       label: "Location",
       placeholder: "Location/City",
@@ -331,10 +332,10 @@ export default function Checkout(props) {
         <label>{input.label}</label>
         <select
           onChange={handleInput}
-          id={input.id}
+          key={input.key}
           name={input.name}
           className="country-selection"
-          required="true"
+          required={true}
         >
           <option disabled="disabled">Choose a country</option>
           {countries}
@@ -393,8 +394,10 @@ export default function Checkout(props) {
             type="button"
             className="order-btn"
             onClick={(e) => {
-              avoidSubmit(e);
-              placeOrder();
+              if (validity.every((input) => input.isValid == true) == true) {
+                avoidSubmit(e);
+                placeOrder();
+              }
             }}
           >
             Place order
