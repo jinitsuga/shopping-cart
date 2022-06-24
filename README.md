@@ -27,6 +27,8 @@ Patterns and regEx: During the form validation research, I came across the patte
 
 Checking property values and styling accordingly in CSS: through some research I also learned that it is possible to check the property of an element and style according to the value of this property in CSS. The example in this project are the error messages in the checkout form - if the input is valid, the span element containing the error message will remain hidden, but if invalid, the error shows and is colored red.
 
+"The most generic solution isn't necessarily always the best one\*: A friend who's more experienced than me opened my eyes to this. Since the beginning of my coding journey I've heard and read about how most of the funcionality (functions, methods, etc) should be as generic as possible, in order to promote reusability and make any potential re-factoring of the code easier, so I've always tried to stick to this idea when approaching problems in my projects. This has led me to over-engineer a couple of things... in this project in particular the input elements, making it potetially more difficult to add a new input on the form, since it would need a condition for each type of input. This would have been much easier by just "hard-coding" it, and it's something I'm definitely going to re-factor in the near future.
+
 ---
 
 Added uniqid - extremely light package to generate random id's for lists/mapped elements. Not necessary to run the project.

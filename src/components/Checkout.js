@@ -2,6 +2,39 @@ import React from "react";
 import "./Checkout.css";
 import FormInput from "./FormInput";
 import uniqid from "uniqid";
+const inputsData = [
+  {
+    id: uniqid(),
+    name: "name",
+    label: "Name",
+    placeholder: "Your name",
+    type: "text",
+    required: true,
+    errorMessage:
+      "Name should be at least 3 and up to 16 characters. Letters and spaces only.",
+    pattern: "^[a-zA-Z\\s]{3,16}$",
+  },
+  {
+    id: uniqid(),
+    name: "country",
+    label: "Country",
+    placeholder: "Select your country",
+    type: "text",
+    required: true,
+    errorMessage: "Choose an existing country",
+    pattern: "^[a-zA-Z\\s]{3,16}$",
+  },
+  {
+    id: uniqid(),
+    name: "location",
+    label: "Location",
+    placeholder: "Location/City",
+    type: "text",
+    required: true,
+    errorMessage: "City should be at least 2 and up to 16 characters",
+    pattern: "^[A-Za-z0-9\\s]{2,16}$",
+  },
+];
 export default function Checkout(props) {
   const [isFormShown, setIsFormShown] = React.useState(false);
   const [areThanksShown, setAreThanksShown] = React.useState(false);
@@ -291,39 +324,7 @@ export default function Checkout(props) {
   });
 
   //Inputs data to map over and generate input components (mostly for ease of validation)
-  const inputsData = [
-    {
-      key: uniqid(),
-      name: "name",
-      label: "Name",
-      placeholder: "Your name",
-      type: "text",
-      required: true,
-      errorMessage:
-        "Name should be at least 3 and up to 16 characters. Letters and spaces only.",
-      pattern: "^[a-zA-Z\\s]{3,16}$",
-    },
-    {
-      key: uniqid(),
-      name: "country",
-      label: "Country",
-      placeholder: "Select your country",
-      type: "text",
-      required: true,
-      errorMessage: "Choose an existing country",
-      pattern: "^[a-zA-Z\\s]{3,16}$",
-    },
-    {
-      key: uniqid(),
-      name: "location",
-      label: "Location",
-      placeholder: "Location/City",
-      type: "text",
-      required: true,
-      errorMessage: "City should be at least 2 and up to 16 characters",
-      pattern: "^[A-Za-z0-9\\s]{2,16}$",
-    },
-  ];
+
   const inputs = inputsData.map((input) => {
     return input.name !== "country" ? (
       <FormInput id={input.key} {...input} onChange={handleInput} />
@@ -337,7 +338,9 @@ export default function Checkout(props) {
           className="country-selection"
           required={true}
         >
-          <option disabled="disabled">Choose a country</option>
+          <option disabled="disabled" selected>
+            Choose a country
+          </option>
           {countries}
         </select>
       </div>
