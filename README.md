@@ -6,7 +6,7 @@ It's difficult for me to just go with another pet store, or workout equipment st
 
 `Through Create React App`
 
-If you clone this repo and want to run it locally, you can do so by simply typing `npm start` in the console, while in the project's directory, since it was done using 'Create React App'.
+If you clone this repo and want to run it locally, you can do so by simply typing `npm start` in the console, while in the project's directory, since it was done using 'Create React App'. Make sure to check package.json for the dependencies!
 
 **`About the app`**
 
